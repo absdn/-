@@ -1,0 +1,20 @@
+# 斐波那契数列生成器
+def fibonacci(n):
+    sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
+
+# 主程序
+if __name__ == "__main__":
+    try:
+        count = int(input("请输入要生成的斐波那契数列长度: "))
+        if count <= 0:
+            print("请输入一个正整数!")
+        else:
+            result = fibonacci(count)
+            print(f"斐波那契数列前 {count} 项: {result}")
+    except ValueError:
+        print("输入无效，请输入一个整数。")
